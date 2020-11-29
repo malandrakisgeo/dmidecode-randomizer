@@ -1,8 +1,14 @@
 /*
- * DMI Decode
+ *   DMI Decode Randomizer
  *
- *   Copyright (C) 2000-2002 Alan Cox <alan@redhat.com>
- *   Copyright (C) 2002-2020 Jean Delvare <jdelvare@suse.de>
+ *   Based on DMI Decode, as written by Alan Cox <alan@redhat.com> 
+ *   and Jean Delvare <jdelvare@suse.de>. 
+ * 
+ *   This is NOT the DMI Decode to be found in most linux distributions. 
+ *   It is a distinct project, aiming to prevent software with root privileges
+ *   from fingerprinting a system. 
+ *   
+ *   Copyright (C) 2020 George Malandrakis <malandrakisgeo@gmail.com>
  *
  *   This program is free software; you can redistribute it and/or modify
  *   it under the terms of the GNU General Public License as published by
@@ -102,6 +108,7 @@ static const char *bad_index = "<BAD INDEX>";
 
 /*
 	Randomizes the serial number.
+	
 */
 static char *serial_number_randomizer(int type){
     //serial number PD3MBBG4
