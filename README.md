@@ -18,4 +18,5 @@ This project is to be followed by another -more demanding- project that will ran
 the information provided by dmidecode. If you are interested in contributing to it, you can contact me via gmail (malandrakisgeo).
 
 **Disclaimer** 
-The project is based upon the code of dmidecode as found on https://github.com/mirror/dmidecode . 
+The project is based on the code of dmidecode as found on https://github.com/mirror/dmidecode . 
+This is a distinct project, and its' author has no intention of claiming cretid for the original dmidecode.
