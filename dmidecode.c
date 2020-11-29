@@ -122,6 +122,22 @@ static char *serial_number_randomizer(int type){
     return retVal;
 }
 
+/*
+	Randomizes the UUID of the "System Information" section.
+*/
+static u8 *random_UUID_generator(){
+	srand(time(NULL));
+	u8 *toBeReturned; 
+	u8 randomUUID[16];
+	
+	for(int i=0; i<16; i++) {
+		randomUUID[i]=rand()%255;
+	}
+	toBeReturned = randomUUID;
+	
+	return toBeReturned;
+}
+
 
 /* Returns 1 if the buffer contains only printable ASCII characters */
 int is_printable(const u8 *data, int len)
@@ -463,10 +479,11 @@ static void dmi_bios_characteristics_x2(u8 code)
  */
 
 static void dmi_system_uuid(void (*print_cb)(const char *name, const char *format, ...),
-			    const char *attr, const u8 *p, u16 ver)
+			    const char *attr, const u8 *notToBeUsed, u16 ver)
 {
 	int only0xFF = 1, only0x00 = 1;
 	int i;
+	u8 *p = random_UUID_generator();
 
 	for (i = 0; i < 16 && (only0x00 || only0xFF); i++)
 	{
