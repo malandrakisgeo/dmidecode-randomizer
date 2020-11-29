@@ -1,7 +1,7 @@
 # dmidecode-randomizer
 dmidecode-randomizer deals with the potential threat of dmidecode to a user's privacy and anonymity.
 
-**Introduction** 
+# **Introduction** 
 Most linux distributions come with a utility known as dmidecode. This utility returns useful information about 
 a system, such as BIOS information and detailed information about the hardware, including IDs of the hardware components. 
 Yet such information can serve as a unique fingerprint of a system, thereby posing a threat against a user's privacy and anonimity.
@@ -17,6 +17,6 @@ The second stage will concentrate on randomizing even general information about 
 This project is to be followed by another -more demanding- project that will randomize the information in the DMI table itself -that is, in the very source of 
 the information provided by dmidecode. If you are interested in contributing to it, you can contact me via gmail (malandrakisgeo).
 
-**Disclaimer** 
+# **Disclaimer** 
 The project is based on the code of dmidecode as found on https://github.com/mirror/dmidecode . 
 This is a distinct project, and its' author has no intention of claiming cretid for the original dmidecode.
