@@ -14,4 +14,8 @@ This project modifies dmidecode in a way that it will no longer be a threat agai
 The first stage of its' development concentrates on returning random IDs instead of the original ones. 
 The second stage will concentrate on randomizing even general information about one's system. 
 
-This project is to be followed by 
+This project is to be followed by another -more demanding- project that will randomize the information in the DMI table itself -that is, in the very source of 
+the information provided by dmidecode. If you are interested in contributing to it, you can contact me via gmail (malandrakisgeo).
+
+**Disclaimer** 
+The project is based upon the code of dmidecode as found on https://github.com/mirror/dmidecode . 
