@@ -81,6 +81,7 @@
 #include "dmiopt.h"
 #include "dmioem.h"
 #include "dmioutput.h"
+#include <time.h>
 
 #define out_of_spec "<OUT OF SPEC>"
 static const char *bad_index = "<BAD INDEX>";
@@ -97,6 +98,30 @@ static const char *bad_index = "<BAD INDEX>";
 /*
  * Type-independant Stuff
  */
+
+
+/*
+	Randomizes the serial number.
+*/
+static char *serial_number_randomizer(int type){
+    //serial number PD3MBBG4
+    //uuid
+    char *retVal;
+    char availableCharsForSerial[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; //
+    if(type == 1) {
+    	//char *srl = malloc(8 * sizeof(*retVal));
+        char srl[8];
+        //srand(sizeof(availableCharsForSerial));
+        srand(time(NULL));
+        for(int i=0; i<=7; i++){
+            srl[i] = availableCharsForSerial[ rand()%sizeof(availableCharsForSerial)];
+        }
+        retVal = srl;
+    }
+
+    return retVal;
+}
+
 
 /* Returns 1 if the buffer contains only printable ASCII characters */
 int is_printable(const u8 *data, int len)
@@ -4103,7 +4128,7 @@ static void dmi_decode(const struct dmi_header *h, u16 ver)
 			pr_attr("Version", "%s",
 				dmi_string(h, data[0x06]));
 			pr_attr("Serial Number", "%s",
-				dmi_string(h, data[0x07]));
+				 serial_number_randomizer(1));
 			if (h->length < 0x19) break;
 			dmi_system_uuid(pr_attr, "UUID", data + 0x08, ver);
 			pr_attr("Wake-up Type", "%s",
